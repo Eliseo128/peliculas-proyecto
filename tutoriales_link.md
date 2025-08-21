@@ -2,3 +2,4 @@
 2. https://github.com/codespaces/templates
 3. https://github.com/settings/education/benefits
 4. https://github.blog/
+5. curso python https://github.com/sergioparedesv/curso-basico-python.git

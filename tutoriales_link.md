@@ -3,3 +3,4 @@
 3. https://github.com/settings/education/benefits
 4. https://github.blog/
 5. curso python https://github.com/sergioparedesv/curso-basico-python.git
+5. mas python https://github.com/sergioparedesv/PythonCurso.git

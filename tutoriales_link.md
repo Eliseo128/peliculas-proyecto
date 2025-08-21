@@ -12,3 +12,4 @@
 5. curso python https://github.com/sergioparedesv/curso-basico-python.git
 5. mas python https://github.com/sergioparedesv/PythonCurso.git
 6. python https://github.com/milaan9/90_Python_Examples.git
+7. python para estadistica https://github.com/fhernanb/Python-para-estadistica.git

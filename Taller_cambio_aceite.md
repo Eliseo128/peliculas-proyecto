@@ -202,3 +202,138 @@ class CambioAceite(models.Model):
 ---
 
 ¿Quieres que también te genere **el diagrama ERD** (modelo entidad-relación) para este `models.py`?
+¡Perfecto! Puedo convertir el diagrama ERD a **Markdown** usando una sintaxis compatible con herramientas como **Mermaid** (muy usada en GitHub y VS Code).
+Aquí tienes el diagrama en **Mermaid (Markdown)**:
+
+---
+
+````markdown
+```mermaid
+erDiagram
+    Marca {
+        int id
+        string nombre_marca
+    }
+    Categoria {
+        int id
+        string nombre_categoria
+    }
+    TipoMotor {
+        int id
+        string tipo_motor
+    }
+    TipoProducto {
+        int id
+        string nombre_tipo_producto
+    }
+    Proveedor {
+        int id
+        string nombre_proveedor
+        string contacto
+        string telefono
+        string email
+        string direccion
+    }
+    Cliente {
+        int id
+        string nombre_cliente
+        string contacto_cliente
+        string telefono_cliente
+        string email_cliente
+        string direccion_cliente
+        string ruc_cliente
+        datetime fecha_registro
+    }
+    Producto {
+        int id
+        string nombre_producto
+        decimal precio
+        int stock
+        datetime fecha_modificacion
+    }
+    ProductoTipo {
+        int id
+    }
+    Compra {
+        int id
+        datetime fecha_compra
+        decimal total_compra
+    }
+    DetalleCompra {
+        int id
+        int cantidad
+        decimal precio_unitario
+        decimal subtotal
+    }
+    TipoDocumento {
+        int id
+        string tipo_documento
+    }
+    Venta {
+        int id
+        datetime fecha_venta
+        decimal total_venta
+        string cliente_nombre
+        string cliente_contacto
+        string numero_documento
+    }
+    DetalleVenta {
+        int id
+        int cantidad
+        decimal precio_unitario
+        decimal subtotal
+    }
+    BoletaVenta {
+        int id
+        string numero_boleta
+        datetime fecha_emision
+    }
+    Factura {
+        int id
+        string numero_factura
+        datetime fecha_emision
+        string ruc_cliente
+        string direccion_cliente
+    }
+    CambioAceite {
+        int id
+        datetime fecha_cambio
+        int kilometraje
+        string tipo_aceite
+        string descripcion
+        string numero_voucher
+    }
+
+    Producto }o--|| Marca : "pertenece a"
+    Producto }o--|| Categoria : "pertenece a"
+    Producto }o--|| TipoMotor : "pertenece a"
+    ProductoTipo }o--|| Producto : "relaciona"
+    ProductoTipo }o--|| TipoProducto : "relaciona"
+    Compra }o--|| Proveedor : "realizada a"
+    DetalleCompra }o--|| Compra : "detalle de"
+    DetalleCompra }o--|| Producto : "detalle de"
+    Venta }o--|| TipoDocumento : "usa"
+    Venta }o--|| Cliente : "realizada por"
+    DetalleVenta }o--|| Venta : "detalle de"
+    DetalleVenta }o--|| Producto : "detalle de"
+    BoletaVenta }o--|| Venta : "asociada a"
+    BoletaVenta }o--|| Cliente : "emitida a"
+    Factura }o--|| Venta : "asociada a"
+    Factura }o--|| Cliente : "emitida a"
+    CambioAceite }o--|| Cliente : "realizado a"
+    CambioAceite }o--|| Producto : "aceite usado"
+````
+
+```
+
+---
+
+📌 **Cómo usarlo:**  
+1. Copia este bloque en un archivo `.md`.  
+2. Abre el archivo en **VS Code** con la extensión “Markdown Preview Mermaid Support” o en GitHub.  
+3. Verás el diagrama ERD renderizado.  
+
+---
+
+¿Quieres que lo haga también **más compacto** (solo tablas y relaciones, sin atributos)?
+```
